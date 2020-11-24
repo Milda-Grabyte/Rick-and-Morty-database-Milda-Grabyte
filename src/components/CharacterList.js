@@ -1,9 +1,11 @@
 import CharacterCard from './CharacterCard'
+import { facepalm } from '../images/ImageList'
+import '../styles/CharacterList.scss'
 function CharacterList(props) {
 
   const listItems = props.alert ? (
     props.wrongText.length >= 5 ? (
-      <img src='https://i.pinimg.com/originals/e4/48/63/e44863ebec8dd76213734a95fe6094f1.gif' alt="Rick facepalming really hard"></img>
+      <img src={facepalm} alt="Rick facepalming really hard"></img>
     ) : (
       <p className='alert'>What kind of a lame-ass would type "{props.wrongText}"?!</p>
     )
@@ -17,13 +19,14 @@ function CharacterList(props) {
             species={character.species}
             gender={character.gender}
             status={character.status}
+            id={character.id}
           />
         </li>
       );
     })
   );
   return (
-    <ul>
+    <ul className='character__list'>
       {listItems}
     </ul>
   );

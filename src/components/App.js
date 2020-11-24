@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-// import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import '../styles/App.scss';
 import api from '../services/api';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail'
+import { logo } from '../images/ImageList';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -23,28 +24,49 @@ function App() {
   const searchedCharacters = characters.filter(character => {
     return character.name.toLowerCase().includes(searchText.toLowerCase());
   });
+
+  const renderCharacterDetail = (props) => {
+    const detailId = parseInt(props.match.params.id);
+    const detail = characters.find((character) => character.id === detailId);
+      return (
+        <CharacterDetail
+          imageUrl={detail.image}
+          name={detail.name}
+          species={detail.species}
+          gender={detail.gender}
+          status={detail.status}
+          origin={detail.origin.name}
+          episodes={detail.episode.length}
+          id={detail.id}
+        />
+    );
+  };
    return (
      <>
-       {/* <Switch> */}
        <div className='main-container'>
-         <header>
-           <img
-             src='https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png'
-             alt='Rick and Morty logo'
-           ></img>
-         </header>
          <main>
-           {/* <Route exact path="/" component={App} />
-             <Route path='/Detail' component={CharacterDetail} /> */}
-           <Filters handleSearchText={handleSearchText} />
-           <CharacterList
-             alert={searchedCharacters.length === 0}
-             wrongText={searchText}
-             characters={searchText === '' ? characters : searchedCharacters}
-           />
+           <Switch>
+             <Route
+               exact
+               path='/'
+               render={() => (
+                 <>
+                   <header>
+                     <img src={logo} alt='Rick and Morty logo'></img>
+                     <Filters handleSearchText={handleSearchText} />
+                   </header>
+                   <CharacterList
+                     alert={searchedCharacters.length === 0}
+                     wrongText={searchText}
+                     characters={searchText === '' ? characters : searchedCharacters}
+                   />
+                 </>
+               )}
+             />
+             <Route path='/character/:id' render={renderCharacterDetail}/>
+           </Switch>
          </main>
        </div>
-       {/* </Switch> */}
      </>
    );
 }
