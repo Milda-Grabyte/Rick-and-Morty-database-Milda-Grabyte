@@ -1,0 +1,10 @@
+.icon {
+  &--dead, &--alive {
+  height: 18px;
+  }
+}
+
+.status__container {
+  display: flex;
+  flex-direction: row;
+}

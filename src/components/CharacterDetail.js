@@ -1,4 +1,7 @@
+import LifeStatus from './LifeStatus';
+import Species from './Species';
 import { Link } from 'react-router-dom';
+
 function CharacterDetail(props) {
   return (
     <>
@@ -10,9 +13,9 @@ function CharacterDetail(props) {
           <img className='char__image' src={props.imageUrl} alt={props.name}></img>
         </div>
         <h2 className='char__name'>{props.name}</h2>
-        <p className='char__species'>{props.species}</p>
         <p className='char__gender'>{props.gender}</p>
-        <p className='char__life-status'>{props.status}</p>
+        <Species className='char__species' gender={props.gender} species={props.species} />
+        <LifeStatus className='char__life-status' status={props.status}/>
         <p className='char__origin'>{props.origin}</p>
         <p className='char__episode-count'>{props.episodes}</p>
       </article>
