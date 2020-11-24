@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import '../styles/App.scss';
 import api from '../services/api';
 import CharacterList from './CharacterList';
