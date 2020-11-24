@@ -12,7 +12,12 @@ function CharacterList(props) {
   ) : (
     props.characters
       .sort((rick, morty) => (rick.name > morty.name ? 1 : rick.name === morty.name ? (rick.id > morty.id ? 1 : -1) : -1))
-      .map((character) => {
+        .map((character) => {
+          // let species;
+          // let status;
+          // if (character.species === "Human" && character.gender === "Male") {
+          //   species = ;
+          // }
         return (
           <li className='character__item' key={`character${character.id}`}>
             <CharacterCard
