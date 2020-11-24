@@ -6,10 +6,12 @@ import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail'
 import { logo } from '../images/ImageList';
+import { notFound } from '../images/ImageList';
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const storedValue = localStorage.getItem('Reduce, Reuse, Re-Morty') || '';
   
    useEffect(() => {
      api.getDataFromApi().then((data) => {
@@ -19,6 +21,7 @@ function App() {
     
   const handleSearchText = searchText => {
     setSearchText(searchText);
+    localStorage.setItem('Reduce, Reuse, Re-Morty', searchText);
   };
 
   const searchedCharacters = characters.filter(character => {
@@ -28,6 +31,7 @@ function App() {
   const renderCharacterDetail = (props) => {
     const detailId = parseInt(props.match.params.id);
     const detail = characters.find((character) => character.id === detailId);
+    if (detail) {
       return (
         <CharacterDetail
           imageUrl={detail.image}
@@ -39,7 +43,10 @@ function App() {
           episodes={detail.episode.length}
           id={detail.id}
         />
-    );
+      );
+    } else {
+      return <img className='image--not-found' alt='You failed' src={notFound}/>;
+    }
   };
    return (
      <>
@@ -53,7 +60,7 @@ function App() {
                  <>
                    <header>
                      <img src={logo} alt='Rick and Morty logo'></img>
-                     <Filters handleSearchText={handleSearchText} />
+                     <Filters storedValue={storedValue} handleSearchText={handleSearchText} />
                    </header>
                    <CharacterList
                      alert={searchedCharacters.length === 0}

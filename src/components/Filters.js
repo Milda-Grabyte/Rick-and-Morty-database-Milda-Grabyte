@@ -6,11 +6,14 @@ const Filters = (props) => {
     props.handleSearchText(ev.target.value);
   };
 
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  }
+
   return (
-    <form className='search-input'>
-      <label className='form__label' htmlFor='name'>
-      </label>
-      <input className='form__input--text' type='text' id='name' onChange={handleFilter} />
+    <form className='search-input' onSubmit={handleSubmit}>
+      <label className='form__label' htmlFor='name'></label>
+      <input className='form__input--text' type='text' id='name' onChange={handleFilter} value={props.storedValue} />
     </form>
   );
 };
