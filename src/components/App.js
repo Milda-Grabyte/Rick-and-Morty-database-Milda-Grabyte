@@ -1,14 +1,41 @@
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import '../styles/App.scss';
 import api from '../services/api';
-
-api.getDataFromApi().then(data => {
-  console.log(data);
-});
+import CharacterList from './CharacterList';
+import Filters from './Filters';
 
 function App() {
-  return (
-   <p>hola</p>
-  );
+  const [characters, setCharacters] = useState([]);
+  const [searchText, setSearchText] = useState('');
+  
+   useEffect(() => {
+     api.getDataFromApi().then((data) => {
+       setCharacters(data.results);
+     });
+   }, []);
+    
+  const handleSearchText = searchText => {
+    setSearchText(searchText);
+  };
+
+  const searchedCharacters = characters.filter(character => {
+    return character.name.toLowerCase().includes(searchText.toLowerCase());
+  });
+
+   return (
+     <>
+       <div className='main-container'>
+         <header>
+           <img src='https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png' alt='Rick and Morty logo'></img>
+         </header>
+         <main>
+           <Filters handleSearchText={handleSearchText} />
+           <CharacterList characters={searchText === '' ? characters : searchedCharacters} />
+         </main>
+       </div>
+     </>
+   );
 }
 
 export default App;
