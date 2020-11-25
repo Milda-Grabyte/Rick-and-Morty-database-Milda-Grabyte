@@ -7,4 +7,4 @@ const getDataFromApi = () => {
     .catch(() => console.log('Error. Can’t access fetch response.'));
 };
 
-export default { getDataFromApi };
+export default {getDataFromApi};
