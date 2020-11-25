@@ -4,8 +4,8 @@ import '../styles/CharacterList.scss'
 function CharacterList(props) {
 
   const listItems = props.alert ? (
-    props.wrongText.length >= 5 ? (
-      <img src={facepalm} alt='Rick facepalming really hard'></img>
+    props.wrongText.length >= 6 ? (
+      <img className='alert--image' src={facepalm} alt='Rick facepalming really hard'></img>
     ) : (
       <p className='alert'>What kind of a lame-ass would type "{props.wrongText}"?!</p>
     )

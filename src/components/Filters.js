@@ -14,7 +14,7 @@ const Filters = (props) => {
   return (
     <form className='search-input' onSubmit={handleSubmit}>
       <label className='form__label' htmlFor='name'></label>
-      <input className='form__input--text' type='text' id='name' onChange={handleFilter} value={props.storedValue} />
+      <input className='form__input--text' type='text' id='name' onChange={handleFilter} value={props.storedValue} placeholder='Get schwifty with a name or something'/>
     </form>
   );
 };

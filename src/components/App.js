@@ -8,6 +8,7 @@ import CharacterDetail from './CharacterDetail'
 import { logo, notFound } from '../images/ImageList';
 import propTypes from 'prop-types';
 import Header from './Header'
+import Footer from './Footer'
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -49,28 +50,29 @@ function App() {
       return <img className='image--not-found' alt='You failed' src={notFound}/>;
     }
   };
-   return (
-     <main className='main-container'>
+  return (
+    <div className='main-container'>
       <Header logo={logo} />
-       <Switch>
-         <Route
-           exact
-           path='/'
-           render={() => (
-             <>
-               <Filters storedValue={storedValue} handleSearchText={handleSearchText} />
-               <CharacterList
-                 alert={searchedCharacters.length === 0}
-                 wrongText={searchText}
-                 characters={searchText === '' ? characters : searchedCharacters}
-               />
-             </>
-           )}
-         />
-         <Route path='/character/:id' render={renderCharacterDetail} />
-       </Switch>
-     </main>
-   );
+      <Switch>
+        <Route
+          exact
+          path='/'
+          render={() => (
+            <>
+              <Filters storedValue={storedValue} handleSearchText={handleSearchText} />
+              <CharacterList
+                alert={searchedCharacters.length === 0}
+                wrongText={searchText}
+                characters={searchText === '' ? characters : searchedCharacters}
+              />
+            </>
+          )}
+        />
+        <Route path='/character/:id' render={renderCharacterDetail} />
+      </Switch>
+      <Footer />
+    </div>
+  );
 }
 
 App.propTypes = {

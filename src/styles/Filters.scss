@@ -5,17 +5,27 @@
 
 .form__input--text {
   background-color: black;
+  background-image: url('https://lacountylibrary.org/wp-content/uploads/2018/03/search.icon_.white_.png');
+  background-repeat: no-repeat;
+  background-position: 3px;
+  background-size: 22px;
   border: 2px solid rgb(180,211,75);
   border-radius: 0px;
   height: 35px;
-  width: 250px;
+  width: 320px;
   transition: width 0.4s ease-in-out;
-  text-indent: 10px;
+  text-indent: 30px;
   color: white;
   font-family: comic_strip;
+  &::placeholder {
+    color: white;
+    opacity: 0.5;
+  }
   @media all and (min-width: 768px) {
     height: 40px;
     width: 400px;
-    text-indent: 15px;
+    text-indent: 36px;
+    background-position: 5px;
+    background-size: 25px;
   }
 }
