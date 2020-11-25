@@ -10,13 +10,13 @@ const LifeStatus = (props) => {
   } else if (props.status === 'unknown') {
     statusIcon = (
       <>
-        <img className='icon--dead' src={dead} alt='Maybe dead' />
-        <p className='q-mark'> ? </p>
-        <img className='icon--alive' src={alive} alt='Could be alive' />
+        <img className='icon--dead det__icon--dead' src={dead} alt='Maybe dead' />
+        <p className='q-mark det__q-mark'> ? </p>
+        <img className='icon--alive det__icon--alive' src={alive} alt='Could be alive' />
       </>
     );
   }
-  return <div className='status__container'>{statusIcon}</div>;
+  return <div className='status__container det__life-status'>{statusIcon}</div>;
 };
 
 export default LifeStatus;

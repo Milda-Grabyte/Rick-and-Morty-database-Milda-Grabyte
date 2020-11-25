@@ -5,29 +5,24 @@
 
 .icon {
   &--dead, &--alive {
-  height: 18px;
+  height: 25px;
   }
-}
-
-.status__container {
-  display: flex;
-  flex-direction: row;
-  padding: 0 0 10px 10px;
 }
 
 .q-mark {
   font-family: comic_strip;
   color: black;
   padding: 0 3px 0 6px;
+  font-size: 25px;
 }
 
 @media all and (min-width: 768px) {
   .icon {
     &--dead, &--alive {
-    height: 22px;
+    height: 35px;
     }
   }
   .q-mark {
-    font-size: 22px;
+    font-size: 35px;
   }
 }

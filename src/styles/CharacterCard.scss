@@ -28,6 +28,7 @@
   &--container {
     margin: 10px;
     width: 100%;
+    min-height: 250px;
     background-color: rgb(0,175,199);
   } 
   &--container:hover {
@@ -44,28 +45,35 @@
   }
   &__name {
     font-family: get_schwifty;
-    font-size: 12px;
+    font-size: 15px;
     padding: 10px 0 5px 0;
     text-align: center;
+    min-height: 70px;
   }
   &__species {
     padding: 0 0 3px 10px;
+    font-size: 25px;
   }
+}
+
+.status__container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 10px 10px;
+  margin-bottom: 0;
 }
 
 @media all and (min-width: 768px) {
   .char {
+    &--container {
+    min-height: 380px;
+    } 
     &__name {
-        font-size: 18px;
+        font-size: 25px;
+        min-height: 70px;
     }
     &__species {
-      font-size: 20px;
+      font-size: 35px;
     }
-  }
-}
-
-@media all and (min-width: 1200px) {
-  .char__name {
-      font-size: 22px;
   }
 }
