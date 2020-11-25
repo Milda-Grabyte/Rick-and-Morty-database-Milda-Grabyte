@@ -1,0 +1,28 @@
+@font-face {
+  font-family: comic_strip;
+  src: url(../fonts/adamwarrenpro.ttf);
+}
+
+.icon {
+  &--dead, &--alive {
+  height: 25px;
+  }
+}
+
+.q-mark {
+  font-family: comic_strip;
+  color: black;
+  padding: 0 3px 0 6px;
+  font-size: 25px;
+}
+
+@media all and (min-width: 768px) {
+  .icon {
+    &--dead, &--alive {
+    height: 35px;
+    }
+  }
+  .q-mark {
+    font-size: 35px;
+  }
+}

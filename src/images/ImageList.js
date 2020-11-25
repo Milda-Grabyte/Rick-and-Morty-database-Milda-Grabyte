@@ -7,3 +7,6 @@ export const notFound = 'https://cdn.dribbble.com/users/2795539/screenshots/5588
 export const dead = 'https://icon-library.com/images/death-icon-png/death-icon-png-21.jpg'
 
 export const alive = 'https://cdn1.iconfinder.com/data/icons/gamezzz/32/heart-512.png'
+
+
+// Locally storing the images would probably have been better. Just playing around with possibilities! 

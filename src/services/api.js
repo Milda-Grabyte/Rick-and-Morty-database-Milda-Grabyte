@@ -8,3 +8,5 @@ const getDataFromApi = () => {
 };
 
 export default { getDataFromApi };
+
+//The other provided source was not accessible
