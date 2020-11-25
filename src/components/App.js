@@ -5,8 +5,9 @@ import api from '../services/api';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail'
-import { logo } from '../images/ImageList';
-import { notFound } from '../images/ImageList';
+import { logo, notFound } from '../images/ImageList';
+import propTypes from 'prop-types';
+import Header from './Header'
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -49,33 +50,31 @@ function App() {
     }
   };
    return (
-     <>
-       <div className='main-container'>
-         <main>
-           <Switch>
-             <Route
-               exact
-               path='/'
-               render={() => (
-                 <>
-                   <header>
-                     <img src={logo} alt='Rick and Morty logo'></img>
-                     <Filters storedValue={storedValue} handleSearchText={handleSearchText} />
-                   </header>
-                   <CharacterList
-                     alert={searchedCharacters.length === 0}
-                     wrongText={searchText}
-                     characters={searchText === '' ? characters : searchedCharacters}
-                   />
-                 </>
-               )}
-             />
-             <Route path='/character/:id' render={renderCharacterDetail}/>
-           </Switch>
-         </main>
-       </div>
-     </>
+     <main className='main-container'>
+      <Header logo={logo} />
+       <Switch>
+         <Route
+           exact
+           path='/'
+           render={() => (
+             <>
+               <Filters storedValue={storedValue} handleSearchText={handleSearchText} />
+               <CharacterList
+                 alert={searchedCharacters.length === 0}
+                 wrongText={searchText}
+                 characters={searchText === '' ? characters : searchedCharacters}
+               />
+             </>
+           )}
+         />
+         <Route path='/character/:id' render={renderCharacterDetail} />
+       </Switch>
+     </main>
    );
 }
+
+App.propTypes = {
+  characters: propTypes.array,
+};
 
 export default App;

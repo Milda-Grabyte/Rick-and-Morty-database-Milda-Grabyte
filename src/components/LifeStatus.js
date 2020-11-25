@@ -4,19 +4,19 @@ import '../styles/LifeStatus.scss'
 const LifeStatus = (props) => {
   let statusIcon;
   if (props.status === 'Alive') {
-    statusIcon = <img className='icon--alive' src={alive} />;
+    statusIcon = <img className='icon--alive' src={alive} alt='Alive... Still' />;
   } else if (props.status === 'Dead') {
-    statusIcon = <img className='icon--dead' src={dead} />;
+    statusIcon = <img className='icon--dead' src={dead} alt='Dead as a doorknob' />;
   } else if (props.status === 'unknown') {
     statusIcon = (
-      <div className='status__container'>
-        <img className='icon--dead' src={dead} />
-        <p> ? </p>
-        <img className='icon--alive' src={alive} />
-      </div>
+      <>
+        <img className='icon--dead' src={dead} alt='Maybe dead' />
+        <p className='q-mark'> ? </p>
+        <img className='icon--alive' src={alive} alt='Could be alive' />
+      </>
     );
   }
-  return <p>{statusIcon}</p>;
+  return <div className='status__container'>{statusIcon}</div>;
 };
 
 export default LifeStatus;
