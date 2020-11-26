@@ -13,7 +13,7 @@ The following functionalities have been implemented:
       · dead/alive status
 - [x] Filtering characters by search input and _showing alerts_ in case of no match
 - [x] Search can be done both in capital and lower case characters
-- [x] Clickable cards link to a detailed single character description page. _Use of React Router_. New added info:
+- [x] Clickable cards link to a detailed single character description page. _Use of React Router_. New added info:\
       · gender\
       · origin\
       · total episode count
