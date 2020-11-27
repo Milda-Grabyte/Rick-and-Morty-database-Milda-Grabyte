@@ -1,3 +1,4 @@
+import React from 'react';
 import CharacterCard from './CharacterCard'
 import { facepalm } from '../images/ImageList'
 import '../styles/CharacterList.scss'
@@ -13,6 +14,9 @@ function CharacterList(props) {
   } else {
     listItems = props.characters
       .sort((rick, morty) => (rick.name > morty.name ? 1 : rick.name === morty.name ? (rick.id > morty.id ? 1 : -1) : -1))
+      // .filter((character) => {
+      //   (props.sortedByStatus === 'All') ? character : props.SortedByStatus === character.status;
+      // })
       .map((character) => {
         return (
           <li className='character__item' key={`character${character.id}`}>
