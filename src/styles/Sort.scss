@@ -1,0 +1,28 @@
+@font-face {
+  font-family: comic_strip;
+  src: url(../fonts/adamwarrenpro.ttf);
+}
+
+.sort {
+  grid-row: 3 / 4;
+  &__label {
+  font-family: comic_strip;
+  color: white;
+  }
+  &__input {
+  margin-left: 10px;
+    color: -internal-light-dark(black, white);
+    background-color:  rgb(180,211,75);
+    font-family: comic_strip;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-image: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+  }
+}

@@ -131,10 +131,10 @@
 
 .footer{
   &__nav {
+    grid-row: 5 / 6;
     font-family: comic_strip;
     color: white;
     display: flex;
-    grid-row: 4 / 5;
     height: 60px;
     align-items: center;
   }

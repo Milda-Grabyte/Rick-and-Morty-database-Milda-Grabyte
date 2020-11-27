@@ -21,7 +21,7 @@ a {
   width: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 15vh auto 1fr auto;
+  grid-template-rows: 15vh auto auto 1fr auto;
   row-gap: 15px;
   justify-items: center;
   min-height: 100vh;
