@@ -10,11 +10,13 @@ import propTypes from 'prop-types';
 import Header from './Header'
 import Footer from './Footer'
 import Sort from './Sort'
+import SortStatus from './SortStatus'
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [sortedByName, setSortedByName] = useState('');
+  const [sortedByStatus, setSortedByStatus] = useState('All');
   const storedValue = localStorage.getItem('Reduce, Reuse, Re-Morty') || '';
   
    useEffect(() => {
@@ -29,11 +31,16 @@ function App() {
   };
 
   const sortByName = (event) => { event.target.value === 'ascending' ?
-    setSortedByName('sort') : setSortedByName('sortReverse')};
+    setSortedByName('sort') : setSortedByName('sortReverse')
+  };
+  
+  const sortByStatus = (event) => {
+    setSortedByStatus(event.target.value)
+  }
   
   const searchedCharacters = characters.filter(character => {
-    return character.name.toLowerCase().includes(searchText.toLowerCase());
-  });
+    return character.name.toLowerCase().includes(searchText.toLowerCase())
+  })
 
   const renderCharacterDetail = (props) => {
     const detailId = parseInt(props.match.params.id);
@@ -66,7 +73,9 @@ function App() {
             <>
               <Filters storedValue={storedValue} handleSearchText={handleSearchText} />
               <Sort sortByName={sortByName} />
+              <SortStatus sortByStatus={sortByStatus} />
               <CharacterList
+                sortedByStatus={sortedByStatus}
                 sortedByName={sortedByName}
                 alert={searchedCharacters.length === 0}
                 wrongText={searchText}

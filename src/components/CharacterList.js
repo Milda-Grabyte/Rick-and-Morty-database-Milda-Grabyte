@@ -22,7 +22,14 @@ function CharacterList(props) {
     } else {
       sorted = props.characters;
     }
-    listItems = sorted.map((character) => {
+    listItems = sorted.filter(character => {
+    if (props.sortedByStatus === 'All') {
+      return character;
+    } else {
+      return character.status === props.sortedByStatus;
+    }
+    })
+  .map((character) => {
         return (
           <li className='character__item' key={`character${character.id}`}>
             <CharacterCard
