@@ -11,14 +11,6 @@ function CharacterList(props) {
       listItems = <p className='alert'>What kind of a lame-ass would type "{props.wrongText}"?!</p>;
     }
   } else {
-<<<<<<< HEAD
-    listItems = props.characters
-      .sort((rick, morty) => (rick.name > morty.name ? 1 : rick.name === morty.name ? (rick.id > morty.id ? 1 : -1) : -1))
-      // .filter((character) => {
-      //   (props.sortedByStatus === 'All') ? character : props.SortedByStatus === character.status;
-      // })
-      .map((character) => {
-=======
     let sorted;
     if (props.sortedByName === 'sort') {
       sorted = props.characters.sort((rick, morty) =>
@@ -39,7 +31,6 @@ function CharacterList(props) {
     }
     })
   .map((character) => {
->>>>>>> dev
         return (
           <li className='character__item' key={`character${character.id}`}>
             <CharacterCard

@@ -9,22 +9,14 @@ import { logo, notFound } from '../images/ImageList';
 import propTypes from 'prop-types';
 import Header from './Header'
 import Footer from './Footer'
-<<<<<<< HEAD
-// import SortStatus from './SortStatus'
-=======
 import Sort from './Sort'
 import SortStatus from './SortStatus'
->>>>>>> dev
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [searchText, setSearchText] = useState('');
-<<<<<<< HEAD
-  // const [sortedByStatus, setSortedByStatus] = useState('');
-=======
   const [sortedByName, setSortedByName] = useState('');
   const [sortedByStatus, setSortedByStatus] = useState('All');
->>>>>>> dev
   const storedValue = localStorage.getItem('Reduce, Reuse, Re-Morty') || '';
   
    useEffect(() => {
@@ -84,17 +76,11 @@ function App() {
           render={() => (
             <>
               <Filters storedValue={storedValue} handleSearchText={handleSearchText} />
-<<<<<<< HEAD
-              {/* <SortStatus sortByStatus={sortByStatus} /> */}
-              <CharacterList
-                // sortedByStatus={sortedByStatus}
-=======
               <Sort sortByName={sortByName} />
               <SortStatus sortByStatus={sortByStatus} />
               <CharacterList
                 sortedByStatus={sortedByStatus}
                 sortedByName={sortedByName}
->>>>>>> dev
                 alert={searchedCharacters.length === 0}
                 wrongText={searchText}
                 characters={searchText === '' ? characters : searchedCharacters}
