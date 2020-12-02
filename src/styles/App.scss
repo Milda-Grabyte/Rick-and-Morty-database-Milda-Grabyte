@@ -20,7 +20,7 @@ a {
   padding: 15px 2px;
   width: 100%;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto auto;
   grid-template-rows: 15vh auto auto 1fr auto;
   row-gap: 15px;
   justify-items: center;

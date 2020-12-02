@@ -3,11 +3,11 @@
   src: url(../fonts/adamwarrenpro.ttf);
 }
 
-.sort {
-  margin-left: 20px;
+.sort--status {
+  margin-right: 20px;
   grid-row: 3 / 4;
-  grid-column: 1 / 2;
-  text-align: left;
+  grid-column: 2 / 3;
+  text-align: right;
   &__label {
   font-family: comic_strip;
   color: white;
