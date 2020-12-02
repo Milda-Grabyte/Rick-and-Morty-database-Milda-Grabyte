@@ -5,7 +5,7 @@ function SortStatus(props) {
   return (
     <div className='sort--status'>
       <label className='sort--status__label' htmlFor='sort'>
-        Sort by gender:
+        Sort by status:
       </label>
       <select className='sort--status__input' name='sort' onChange={props.sortByStatus}>
         <option value='All'>All</option>
