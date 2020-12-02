@@ -27,8 +27,8 @@
 .char {
   &--container {
     margin: 10px;
-    width: 100%;
-    min-height: 250px;
+    width: 200px;
+    height: 380px;
     background-color: rgb(0,175,199);
   } 
   &--container:hover {
@@ -45,14 +45,14 @@
   }
   &__name {
     font-family: get_schwifty;
-    font-size: 15px;
+    font-size: 25px;
     padding: 10px 0 5px 0;
     text-align: center;
     min-height: 70px;
   }
   &__species {
     padding: 0 0 3px 10px;
-    font-size: 25px;
+    font-size: 35px;
   }
 }
 
@@ -63,17 +63,4 @@
   margin-bottom: 0;
 }
 
-@media all and (min-width: 768px) {
-  .char {
-    &--container {
-    min-height: 380px;
-    } 
-    &__name {
-        font-size: 25px;
-        min-height: 70px;
-    }
-    &__species {
-      font-size: 35px;
-    }
-  }
-}
+
