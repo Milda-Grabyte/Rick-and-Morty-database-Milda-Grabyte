@@ -8,11 +8,12 @@ This is a character search engine for **Rick and Morty** series, developed with 
 The following functionalities have been implemented:
 
 - [x] Fetching data from API
-- [x] Rendering an _alphabetically sorted_ character list (cards) with each character's\
+- [x] Rendering a character list (cards) with each character's\
       · foto\
       · name\
       · species\
       · dead/alive status
+- [x] Possibility to sort the characters _alphabetically_ and/or by their _life status_.
 - [x] Filtering characters by search input and _showing alerts_ in case of no match
 - [x] Search can be done both in capital and lower case characters
 - [x] Clickable cards link to a detailed single character description page. _Use of React Router_. New added info:\
