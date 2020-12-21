@@ -29,6 +29,6 @@ The following functionalities have been implemented:
 - [x] Favicon
 - [x] A few animations and external links for better user experience
 
-I hope you enjoy the searching experience, brought to you by a Front-end junior! :blush::computer::octocat::beers:
+I hope you enjoy the searching experience, brought to you by a junior Front-ender! :blush::computer::octocat::beers:
 
 ### -- By Milda Grabyte
